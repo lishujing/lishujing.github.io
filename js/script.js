@@ -128,6 +128,20 @@
     $container.toggleClass('mobile-nav-on');
     stopMobileNavAnim();
   });
+  // min_image
+  $(function(){
+    //一段正则，匹配所有_min.的图片src属性
+    var test = /_min\./
+    //遍历所有的图片节点
+    $(".min_image").each(function(index,obj){	
+      if(test.test($(this).attr("src"))){
+        var reSrc = $(this).attr("src").replace(test,".");
+        $(this).attr("src",reSrc)
+      }		
+    })
+  })
+  
+  // Time
   $(function () {
     //let numbers = $('.g-number:eq(0)');
     //numbers=Array.prototype.slice.call(numbers)
