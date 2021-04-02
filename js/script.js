@@ -128,7 +128,45 @@
     $container.toggleClass('mobile-nav-on');
     stopMobileNavAnim();
   });
-
+  $(function () {
+    //let numbers = $('.g-number:eq(0)');
+    //numbers=Array.prototype.slice.call(numbers)
+    // console.log(numbers)
+    // console.log(numbers[1])
+    setInterval(() => {
+      // Array.prototype.slice.call(numbers).forEach(key => {
+        let dates=new Date()
+        let h=dates.getHours();
+        if(h>=10){
+          h=h.toString().split('');
+          $('.g-number:eq(0)').attr('data-digit', parseInt(h[0]));
+          $('.g-number:eq(1)').attr('data-digit', parseInt(h[1]));
+        }else{
+          $('.g-number:eq(0)').attr('data-digit', 0);
+          $('.g-number:eq(1)').attr('data-digit', parseInt(h));
+        }
+        let m=dates.getMinutes();
+        if(m>=10){
+          m=m.toString().split('');
+          $('.g-number:eq(2)').attr('data-digit', parseInt(m[0]));
+          $('.g-number:eq(3)').attr('data-digit', parseInt(m[1]));
+        }else{
+          $('.g-number:eq(2)').attr('data-digit', 0);
+          $('.g-number:eq(3)').attr('data-digit', parseInt(m));
+        }
+        let s=dates.getSeconds();
+        if(s>=10){
+          s=s.toString().split('');
+          $('.g-number:eq(4)').attr('data-digit', parseInt(s[0]));
+          $('.g-number:eq(5)').attr('data-digit', parseInt(s[1]));
+        }else{
+          $('.g-number:eq(4)').attr('data-digit', 0);
+          $('.g-number:eq(5)').attr('data-digit', parseInt(s));
+        }
+      //   $(key).attr('data-digit', parseInt(Math.random() * 9));
+      // });
+    }, 1000);
+  });
   $('#wrap').on('click', function(){
     if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
 
