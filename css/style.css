@@ -135,6 +135,7 @@ body {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 20px;
+  flex: 1;
 }
 .outer:before,
 .outer:after {
@@ -179,6 +180,8 @@ body {
   transition: 0.2s ease-out;
   z-index: 1;
   background: #eee;
+  display: flex;
+  flex-direction: column;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -543,7 +546,7 @@ body {
   margin: 0 12px 1em;
 }
 .article-header {
-  padding: 20px 20px 0;
+  padding: 20px 20px 10px;
 }
 .article-title {
   text-decoration: none;
