@@ -24,15 +24,19 @@
     <link rel="icon" href="/favicon.png">
 
 
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css" />
 
 
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/pages/article.css">
-    <link rel="stylesheet" href="/css/components/head-title.css">
-    <link rel="stylesheet" href="/css/components/time.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/article.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/head-title.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/time.css" />
 
-    <link rel="stylesheet" href="/css/components/banner.css">
+    <link rel="stylesheet" type="text/css" href="/css/components/banner.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/pages/artcles/article-item-style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pages/artcles/js-origin.css" />
+
     <meta name="generator" content="Hexo 4.2.1">
 </head>
 
@@ -52,7 +56,7 @@
                         </h1>
 
                         <h2 id="subtitle-wrap">
-                            <a href="/article.html" id="subtitle">Study with me</a>
+                            <a href="/article.html" id="subtitle">Let us study it together!</a>
                         </h2>
 
                     </div>
@@ -62,14 +66,14 @@
 
                             <a class="main-nav-link" href="/">Home</a>
 
-                            <a class="main-nav-link" href="./article.html">Article</a>
+                            <a class="main-nav-link" href="/article.html">Article</a>
 
                         </nav>
                         <nav id="sub-nav">
 
-                            <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+                            <!-- <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
 
-                            <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+                            <a id="nav-search-btn" class="nav-icon" title="搜索"></a> -->
                         </nav>
                         <div id="search-form-wrap">
                             <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
@@ -149,7 +153,7 @@
 
                     <article id="post-前端笔试笔记" class="article article-type-post" itemscope itemprop="blogPost">
                         <div class="article-meta">
-                            <a href="./article/js/js-origin.html" class="article-date">
+                            <a href="#" class="article-date">
                                 <time datetime="2020-07-18T02:21:10.000Z" itemprop="datePublished">2020-07-18</time>
                             </a>
 
@@ -161,18 +165,36 @@
 
 
                                 <h1 itemprop="name">
-                                    <a class="article-title" href="./article/js/js-origin.html">What is JavaScript?</a>
+                                    <a class="article-title" href="#">What is JavaScript?</a>
                                 </h1>
 
 
                             </header>
 
                             <div class="article-entry" itemprop="articleBody">
-
-
+                                <p>
+                                    JavaScript 是一种专为与网页交互而设计的脚本语言，由下列三个不同的部分组成：
+                                </p>
+                                <ul>
+                                    <li>
+                                        ECMAScript，由 ECMA-262 定义，提供核心语言功能；
+                                    </li>
+                                    <li>
+                                        文档对象模型（DOM），提供访问和操作网页内容的方法和接口；
+                                    </li>
+                                    <li>
+                                        浏览器对象模型（BOM），提供与浏览器交互的方法和接口。
+                                    </li>
+                                </ul>
+                                <p>
+                                    JavaScript
+                                    的这三个组成部分，在当前五个主要的浏览器（IE、Firefox、Chrome、Safari、Opera）中都得到了不同程度的支持。其中，所有浏览器对ECMAScript
+                                    第三版的支持大体上都还不错，而对 ECMAScript5 的支持程度越来越高，但对 DOM 的支持则彼此相差比较多。对 HTML5 已经正式纳入标准的 BOM
+                                    来说，尽管各浏览器都实现了某些总所周知的共同特性，但其他特性还是会因浏览器而异。
+                                </p>
 
                             </div>
-                            <footer class="article-footer">
+                            <!-- <footer class="article-footer">
                                 <a data-url="http://yoursite.com/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E7%AC%94%E8%AE%B0/"
                                     data-id="ckcrd63zo0000ckuvdtsu6qnw" class="article-share-link">Share</a>
 
@@ -183,7 +205,7 @@
                                             it</a></li>
                                 </ul>
 
-                            </footer>
+                            </footer> -->
                         </div>
 
                     </article>

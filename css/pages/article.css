@@ -6,4 +6,19 @@
 }
 #header {
   height: 360px;
+  min-height: 360px;
+}
+.outer {
+  width: 100%;
+}
+#wrap {
+  /* display: block; */
+}
+@media screen and (min-width: 768px) {
+  #main {
+    width: 100%;
+  }
+}
+.article-header {
+  padding: 20px;
 }
