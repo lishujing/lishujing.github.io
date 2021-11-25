@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Lishujing</title>
+        <link>http://yoursite.com</link>
+        <description>Just Do It</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 25 Nov 2021 15:17:57 +0800</pubDate>
+        <lastBuildDate>Thu, 25 Nov 2021 15:17:57 +0800</lastBuildDate>
+        <category>try it</category>
+        <item>
+            <guid isPermalink="true">http://yoursite.com/2021/11/25/haha/</guid>
+            <title>haha</title>
+            <link>http://yoursite.com/2021/11/25/haha/</link>
+            <pubDate>Thu, 25 Nov 2021 15:17:57 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://yoursite.com/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E7%AC%94%E8%AE%B0/</guid>
+            <title>前端笔试笔记</title>
+            <link>http://yoursite.com/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E7%AC%94%E8%AE%B0/</link>
+            <category>try it</category>
+            <pubDate>Sat, 18 Jul 2020 10:21:10 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
+    </channel>
+</rss>

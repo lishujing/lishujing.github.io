@@ -1,0 +1,26 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Lishujing",
+    "description": "Just Do It",
+    "home_page_url": "http://yoursite.com",
+    "items": [
+        {
+            "id": "http://yoursite.com/2021/11/25/haha/",
+            "url": "http://yoursite.com/2021/11/25/haha/",
+            "title": "haha",
+            "date_published": "2021-11-25T07:17:57.000Z",
+            "content_html": "",
+            "tags": []
+        },
+        {
+            "id": "http://yoursite.com/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E7%AC%94%E8%AE%B0/",
+            "url": "http://yoursite.com/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E7%AC%94%E8%AE%B0/",
+            "title": "前端笔试笔记",
+            "date_published": "2020-07-18T02:21:10.000Z",
+            "content_html": "",
+            "tags": [
+                "try it"
+            ]
+        }
+    ]
+}

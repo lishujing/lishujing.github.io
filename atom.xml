@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://yoursite.com</id>
+    <title>Lishujing</title>
+    <link href="http://yoursite.com" />
+    <updated>2021-11-25T07:17:57.000Z</updated>
+    <category term="try it" />
+    <entry>
+        <id>http://yoursite.com/2021/11/25/haha/</id>
+        <title>haha</title>
+        <link rel="alternate" href="http://yoursite.com/2021/11/25/haha/"/>
+        <content type="html"></content>
+        <updated>2021-11-25T07:17:57.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://yoursite.com/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E7%AC%94%E8%AE%B0/</id>
+        <title>前端笔试笔记</title>
+        <link rel="alternate" href="http://yoursite.com/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AF%95%E7%AC%94%E8%AE%B0/"/>
+        <content type="html"></content>
+        <category term="try it" />
+        <updated>2020-07-18T02:21:10.000Z</updated>
+    </entry>
+</feed>
