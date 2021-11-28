@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>录音demo</title>
+    <style>
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        audio {
+            min-width: 50vw;
+            margin-bottom: 50px;
+        }
+
+        button {
+            width: 15vw;
+            height: 15vw;
+            color: #fff;
+            background-color: red;
+            border: 1px solid #fff;
+            border-radius: 50%;
+        }
+
+        #start {
+            color: black;
+            background-color: #fff;
+            border: 1px solid black;
+            display: block;
+        }
+
+        #stop {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <audio controls="controls" class="audio-node" src=""></audio>
+        <div class="botton">
+            <button onclick="record()" id="start">开始</button>
+            <button onclick="stopRecord()" id="stop">停止</button>
+        </div>
+    </div>
+    <script>
+        let leftDataList = [], jsNode = null, mediaNode = null;
+        function createJSNode(audioContext) {
+            const BUFFER_SIZE = 4096;
+            const INPUT_CHANNEL_COUNT = 2;
+            const OUTPUT_CHANNEL_COUNT = 2;
+            let creator = audioContext.createScriptProcessor || audioContext.createJavaScriptNode;
+            creator = creator.bind(audioContext);
+            return creator(BUFFER_SIZE,
+                INPUT_CHANNEL_COUNT, OUTPUT_CHANNEL_COUNT);
+        }
+        function record() {
+            leftDataList = []
+            window.navigator.mediaDevices.getUserMedia({
+                audio: {
+                    sampleRate: 44100, // 采样率
+                    channelCount: 1,   // 声道
+                    volume: 1.0        // 音量
+                }
+            }).then(mediaStream => {
+                beginRecord(mediaStream);
+            }).catch(err => {
+                console.error(err);
+            });
+        }
+        function beginRecord(mediaStream) {
+            document.getElementById('start').style.display = 'none';
+            document.getElementById('stop').style.display = 'block';
+            document.querySelector('.audio-node').src = '';
+            let audioContext = new (window.AudioContext || window.webkitAudioContext);
+            mediaNode = audioContext.createMediaStreamSource(mediaStream);
+            // 创建一个jsNode
+            jsNode = createJSNode(audioContext);
+            // 需要连到扬声器消费掉outputBuffer，process回调才能触发
+            // 并且由于不给outputBuffer设置内容，所以扬声器不会播放出声音
+            jsNode.connect(audioContext.destination);
+            jsNode.onaudioprocess = onAudioProcess;
+            // 把mediaNode连接到jsNode
+            mediaNode.connect(jsNode);
+        }
+        function onAudioProcess(event) {
+            let audioBuffer = event.inputBuffer;
+            let leftChannelData = audioBuffer.getChannelData(0);
+            leftDataList.push(leftChannelData.slice(0));
+        }
+        function mergeArray(list) {
+            let length = list.length * list[0].length;
+            let data = new Float32Array(length),
+                offset = 0;
+            for (let i = 0; i < list.length; i++) {
+                data.set(list[i], offset);
+                offset += list[i].length;
+            }
+            return data;
+        }
+        function writeUTFBytes(view, offset, string) {
+            var lng = string.length
+            for (let i = 0; i < lng; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i))
+            }
+        }
+        function createWavFile(audioData, sampleRate = 44100, channels = 1) {
+            // audioData = mergeArray(audioData)
+            const WAV_HEAD_SIZE = 44
+            const buffer = new ArrayBuffer(audioData.length * 2 + WAV_HEAD_SIZE)
+            // 需要用一个view来操控buffer
+            const view = new DataView(buffer)
+            // 写入wav头部信息
+            // RIFF chunk descriptor/identifier
+            writeUTFBytes(view, 0, 'RIFF')
+            // RIFF chunk length
+            view.setUint32(4, 44 + audioData.length * 2, true)
+            // RIFF type
+            writeUTFBytes(view, 8, 'WAVE')
+            // format chunk identifier
+            // FMT sub-chunk
+            writeUTFBytes(view, 12, 'fmt ')
+            // format chunk length
+            view.setUint32(16, 16, true)
+            // sample format (raw)
+            view.setUint16(20, 1, true)
+            // stereo (2 channels)
+            view.setUint16(22, channels, true)
+            // sample rate
+            view.setUint32(24, sampleRate, true)
+            // byte rate (sample rate * block align)
+            view.setUint32(28, sampleRate * 2, true)
+            // block align (channel count * bytes per sample)
+            view.setUint16(32, channels * 2, true)
+            // bits per sample
+            view.setUint16(34, 16, true)
+            // data sub-chunk
+            // data chunk identifier
+            writeUTFBytes(view, 36, 'data')
+            // data chunk length
+            view.setUint32(40, audioData.length * 2, true)
+
+            // 写入PCM数据
+            let length = audioData.length;
+            let index = 44;
+            let volume = 1;
+            for (let i = 0; i < length; i++) {
+                view.setInt16(index, audioData[i] * (0x7FFF * volume), true);
+                index += 2;
+            }
+            return buffer
+        }
+        function playRecord(arrayBuffer) {
+            let blob = new Blob([new Uint8Array(arrayBuffer)], { type: 'audio/wav' })
+            let blobUrl = URL.createObjectURL(blob);
+            document.querySelector('.audio-node').src = blobUrl;
+        }
+        function stopRecord() {
+            // 停止录音
+            let leftData = mergeArray(leftDataList);
+            let wavBuffer = createWavFile(leftData);
+            playRecord(wavBuffer);
+            mediaNode.disconnect();
+            jsNode.disconnect();
+            document.getElementById('start').style.display = 'block';
+            document.getElementById('stop').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
