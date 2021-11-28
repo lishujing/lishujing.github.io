@@ -102,12 +102,12 @@ Supergirl = Lishujing</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/ab5f679cly8gwsanme4y9j21hc0u00th.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/ab5f679cly8gwsami8tltj21c00u00vo.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/ab5f679cly8gwsakltyhpj21hc0u0ae7.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/ab5f679cly8gwsa87zi4tj21900u0n6t.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/ab5f679cly8gwsalxk9nhj21hc0u0gtu.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/ab5f679cly8gwsal0bzbzj21900u0wi2.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/ab5f679cly8gwsal0bzbzj21900u0wi2.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/ab5f679cly8gwsamyra1hj21900u0dk4.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/ab5f679cly8gwsakltyhpj21hc0u0ae7.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/ab5f679cly8gwsak2blraj21910u0wt5.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/ab5f679cly8gwsami8tltj21c00u00vo.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/ab5f679cly8gwsa87zi4tj21900u0n6t.jpg"></li>
         </ul>
       </div>
     </header>
@@ -151,22 +151,26 @@ Supergirl = Lishujing</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="纯H5-实现录音功能"><a href="#纯H5-实现录音功能" class="headerlink" title="纯H5 实现录音功能"></a>纯H5 实现录音功能</h2><hr>
-<ul>
-<li>第一反应，则使用 <code>&lt;audio&gt;</code> 标签<blockquote>
-<p><strong>定义和用法</strong><br/><code>&lt;audio&gt;</code> <em>标签定义声音，比如音乐或其他音频流。</em></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src&#x3D;&quot;&#x2F;i&#x2F;horse.ogg&quot; controls&#x3D;&quot;controls&quot;&gt;</span><br><span class="line">Your browser does not support the audio element.</span><br><span class="line">&lt;&#x2F;audio&gt;</span><br></pre></td></tr></table></figure></li>
-<li>创建一个<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQVBJL0F1ZGlvQ29udGV4dA==">AudioContext</span>对象<blockquote>
-<p><strong>AudioContext.createMediaStreamSource()</strong><br/><em>创建一个MediaStreamAudioSourceNode接口来关联可能来自本地计算机麦克风或其他来源的音频流MediaStream。</em><br/><strong>AudioContext.createMediaStreamDestination()</strong><br/><em>创建一个MediaStreamAudioDestinationNode (en-US)接口来关联可能储存在本地或已发送至其他计算机的MediaStream音频。</em></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var audioCtx &#x3D; new AudioContext();</span><br><span class="line">var source &#x3D; audioCtx.createMediaStreamSource(stream);</span><br><span class="line">var destination &#x3D; audioCtx.createMediaStreamDestination();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+    <h2 id="纯h5-实现录音功能"><a class="markdownIt-Anchor" href="#纯h5-实现录音功能">#</a> 纯 H5 实现录音功能</h2>
 <hr>
-<h4 id="试一试"><a href="#试一试" class="headerlink" title="试一试"></a>试一试</h4><ul>
-<li><a href="../_data/audio.html">录音demo</a></li>
-<li><a href="../_data/canvas.html">手写demo</a></li>
+<ul>
+<li>第一反应，则使用  <code>&lt;audio&gt;</code>  标签</li>
+</ul>
+<blockquote>
+<p><strong>定义和用法</strong><br/> <code>&lt;audio&gt;</code>  <em>标签定义声音，比如音乐或其他音频流。</em></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src&#x3D;&quot;&#x2F;i&#x2F;horse.ogg&quot; controls&#x3D;&quot;controls&quot;&gt;</span><br><span class="line">Your browser does not support the audio element.</span><br><span class="line">&lt;&#x2F;audio&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建一个<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQVBJL0F1ZGlvQ29udGV4dA=="> AudioContext</span> 对象</li>
+</ul>
+<blockquote>
+<p><strong>AudioContext.createMediaStreamSource()</strong><br/><em>创建一个 MediaStreamAudioSourceNode 接口来关联可能来自本地计算机麦克风或其他来源的音频流 MediaStream。</em><br/><strong>AudioContext.createMediaStreamDestination()</strong><br/><em>创建一个 MediaStreamAudioDestinationNode (en-US) 接口来关联可能储存在本地或已发送至其他计算机的 MediaStream 音频。</em></p>
+</blockquote>
+<h2 id="-1-"><a class="markdownIt-Anchor" href="#-1-">#</a> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var audioCtx &#x3D; new AudioContext();</span><br><span class="line">var source &#x3D; audioCtx.createMediaStreamSource(stream);</span><br><span class="line">var destination &#x3D; audioCtx.createMediaStreamDestination();</span><br></pre></td></tr></table></figure></h2>
+<h4 id="试一试"><a class="markdownIt-Anchor" href="#试一试">#</a> 试一试</h4>
+<ul>
+<li><a href="../_data/audio.html">录音 demo</a></li>
+<li><a href="../_data/canvas.html">手写 demo</a></li>
 </ul>
 
       <div class="tags">
@@ -253,7 +257,13 @@ Supergirl = Lishujing</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#纯H5-实现录音功能"><span class="toc-number">1.</span> <span class="toc-text">纯H5 实现录音功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#试一试"><span class="toc-number">1.0.1.</span> <span class="toc-text">试一试</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#纯h5-实现录音功能"><span class="toc-number">1.</span> <span class="toc-text"> 纯 H5 实现录音功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1-"><span class="toc-number">2.</span> <span class="toc-text"> 1
+2
+3
+var audioCtx &#x3D; new AudioContext();
+var source &#x3D; audioCtx.createMediaStreamSource(stream);
+var destination &#x3D; audioCtx.createMediaStreamDestination();
+</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#试一试"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 试一试</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
