@@ -8,32 +8,30 @@
         <pubDate>Fri, 26 Nov 2021 14:44:04 +0800</pubDate>
         <lastBuildDate>Fri, 26 Nov 2021 14:44:04 +0800</lastBuildDate>
         <category>H5</category>
+        <category>TypeScript</category>
+        <category>Study</category>
         <item>
             <guid isPermalink="true">http://yoursite.com/2021/11/26/%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
             <title>录音功能</title>
             <link>http://yoursite.com/2021/11/26/%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</link>
             <category>H5</category>
             <pubDate>Fri, 26 Nov 2021 14:44:04 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;纯h5-实现录音功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#纯h5-实现录音功能&#34;&gt;#&lt;/a&gt; 纯 H5 实现录音功能&lt;/h2&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;纯H5-实现录音功能&#34;&gt;&lt;a href=&#34;#纯H5-实现录音功能&#34; class=&#34;headerlink&#34; title=&#34;纯H5 实现录音功能&#34;&gt;&lt;/a&gt;纯H5 实现录音功能&lt;/h2&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;第一反应，则使用 &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; 标签&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;定义和用法&lt;/strong&gt;&lt;br/&gt;&lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; &lt;em&gt;标签定义声音，比如音乐或其他音频流。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;audio src&amp;#x3D;&amp;quot;&amp;#x2F;i&amp;#x2F;horse.ogg&amp;quot; controls&amp;#x3D;&amp;quot;controls&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Your browser does not support the audio element.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;&amp;#x2F;audio&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;创建一个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQVBJL0F1ZGlvQ29udGV4dA==&#34;&gt;AudioContext&lt;/span&gt;对象&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;AudioContext.createMediaStreamSource()&lt;/strong&gt;&lt;br/&gt;&lt;em&gt;创建一个MediaStreamAudioSourceNode接口来关联可能来自本地计算机麦克风或其他来源的音频流MediaStream。&lt;/em&gt;&lt;br/&gt;&lt;strong&gt;AudioContext.createMediaStreamDestination()&lt;/strong&gt;&lt;br/&gt;&lt;em&gt;创建一个MediaStreamAudioDestinationNode (en-US)接口来关联可能储存在本地或已发送至其他计算机的MediaStream音频。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;var audioCtx &amp;#x3D; new AudioContext();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var source &amp;#x3D; audioCtx.createMediaStreamSource(stream);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var destination &amp;#x3D; audioCtx.createMediaStreamDestination();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;第一反应，则使用  &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt;  标签&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;定义和用法&lt;/strong&gt;&lt;br/&gt; &lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt;  &lt;em&gt;标签定义声音，比如音乐或其他音频流。&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;audio src&amp;#x3D;&amp;quot;&amp;#x2F;i&amp;#x2F;horse.ogg&amp;quot; controls&amp;#x3D;&amp;quot;controls&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Your browser does not support the audio element.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;lt;&amp;#x2F;audio&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;创建一个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQVBJL0F1ZGlvQ29udGV4dA==&#34;&gt; AudioContext&lt;/span&gt; 对象&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;AudioContext.createMediaStreamSource()&lt;/strong&gt;&lt;br/&gt;&lt;em&gt;创建一个 MediaStreamAudioSourceNode 接口来关联可能来自本地计算机麦克风或其他来源的音频流 MediaStream。&lt;/em&gt;&lt;br/&gt;&lt;strong&gt;AudioContext.createMediaStreamDestination()&lt;/strong&gt;&lt;br/&gt;&lt;em&gt;创建一个 MediaStreamAudioDestinationNode (en-US) 接口来关联可能储存在本地或已发送至其他计算机的 MediaStream 音频。&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;-1-&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#-1-&#34;&gt;#&lt;/a&gt; &lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;var audioCtx &amp;#x3D; new AudioContext();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var source &amp;#x3D; audioCtx.createMediaStreamSource(stream);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var destination &amp;#x3D; audioCtx.createMediaStreamDestination();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/h2&gt;
-&lt;h4 id=&#34;试一试&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#试一试&#34;&gt;#&lt;/a&gt; 试一试&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/demo/audio.html&#34;&gt;录音 demo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;/demo/canvas.html&#34;&gt;手写 demo&lt;/a&gt;&lt;/li&gt;
+&lt;h4 id=&#34;试一试&#34;&gt;&lt;a href=&#34;#试一试&#34; class=&#34;headerlink&#34; title=&#34;试一试&#34;&gt;&lt;/a&gt;试一试&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/demo/audio.html&#34;&gt;录音demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/demo/canvas.html&#34;&gt;手写demo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
         </item>

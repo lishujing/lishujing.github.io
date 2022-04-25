@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Lishujing • All posts by \"typescript\" tag",
+    "description": "笑一个吧，功成名就不是目的。让自己快乐快乐这才叫做意义，童年的纸飞机，现在终于飞回我手里~",
+    "home_page_url": "http://yoursite.com",
+    "items": [
+        {
+            "id": "http://yoursite.com/2022/04/25/TypeScript-%E5%85%A5%E9%97%A8%E7%BB%83%E4%B9%A0/",
+            "url": "http://yoursite.com/2022/04/25/TypeScript-%E5%85%A5%E9%97%A8%E7%BB%83%E4%B9%A0/",
+            "title": "TypeScript 入门练习",
+            "date_published": "2022-04-25T14:33:17.000Z",
+            "content_html": "<h3 id=\"TypeScript-与-JavaScript-的区别\"><a href=\"#TypeScript-与-JavaScript-的区别\" class=\"headerlink\" title=\"TypeScript 与 JavaScript 的区别\"></a>TypeScript 与 JavaScript 的区别</h3><p>| TypeScript | JavaScript |<br>| JavaScript 的超集用于解决大型项目的代码复杂性 | 一种脚本语言，用于创建动态网页。 |<br>| 可以在编译期间发现并纠正错误 | 作为一种解释型语言，只能在运行时发现错误 |<br>| 强类型，支持静态和动态类型 | 弱类型，没有静态类型选项 |<br>| 最终被编译成 JavaScript 代码，使浏览器可以理解 | 可以直接在浏览器中使用 |<br>| 支持模块、泛型和接口 | 不支持模块，泛型或接口 |<br>| 支持 ES3，ES4，ES5 和 ES6 等 | 不支持编译其他 ES3，ES4，ES5 或 ES6 功能 |<br>| 社区的支持仍在增长，而且还不是很大 | 大量的社区支持以及大量文档和解决问题的支持 |</p>\n",
+            "tags": [
+                "TypeScript",
+                "Study"
+            ]
+        }
+    ]
+}
