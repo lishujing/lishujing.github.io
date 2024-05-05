@@ -1,0 +1,46 @@
+# Basic
+title: Shu Jing, Li
+description: 本博客主要记录我的学习笔记, 希望可以与您交个朋友
+creator: <a href="https://lishujing.github.io">@Lishujing</a>
+
+url: "https://lishujing.github.io"
+
+permalink: /:year/:month/:title/
+
+# Format
+highlighter: rouge
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: blue
+
+# The blog button should not be removed.
+blog_button:
+    title: Blog
+    description: Visit blog
+
+# Navigation buttons in the front page.
+nav:
+    - {title: Resume, description: Resume, url: 'https://lishujing.github.io/resume'}
+    - {title: Life, description: Life, url: 'https://lishujing.github.io/life-record'}
+    - {title: Gitee, description: Gitee, url: 'https://gitee.com/super_lishujing'}
+    - {title: 掘金, description: 掘金, url: 'https://juejin.cn/user/3271769102753694'}
+
+# Pagination
+plugins: [jekyll-paginate]
+paginate: 10
+paginate_path: "page/:num/"
+
+# Comment
+comment:
+    disqus: lishujing
+    # duoshuo: 
+    
+# Social
+social:
+    github: lishujing
+    mail: super_lishujing@163.com
+
+# Google Analytics
+ga:
+    # id: your_ga_id
+    # host: your_host
